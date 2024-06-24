@@ -10,8 +10,8 @@ import java.math.BigDecimal
 
 data class CustomerDto(
     @field:NotEmpty(message = "Insira o nome") val firstName: String,
-    @field:CPF(message = "Insira o sobrenome")val lastName: String,
-    @field:NotEmpty(message = "Insira o CPF") val cpf: String,
+    @field:NotEmpty(message = "Insira o sobrenome")val lastName: String,
+    @field:CPF(message = "Insira o CPF") val cpf: String,
     @field:NotNull(message = "Insira o salario") val income: BigDecimal,
     @field:Email(message = "Insira o email") val email: String,
     @field:NotEmpty(message = "Insira o password") val password: String,

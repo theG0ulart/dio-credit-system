@@ -5,6 +5,7 @@ import edu.wearedev.liberacao.credito.dto.CreditView
 import edu.wearedev.liberacao.credito.dto.CreditViewList
 import edu.wearedev.liberacao.credito.entity.Credit
 import edu.wearedev.liberacao.credito.service.impl.CreditService
+import jakarta.validation.Valid
 import org.apache.coyote.Response
 import org.aspectj.apache.bcel.classfile.Code
 import org.springframework.http.HttpStatus
@@ -21,7 +22,7 @@ class CreditController (
 ) {
 
     @PostMapping
-    fun saveCredit(@RequestBody creditDto: CreditDto): ResponseEntity<String> {
+    fun saveCredit(@RequestBody @Valid creditDto: CreditDto): ResponseEntity<String> {
         val credit = this.creditService.save(creditDto.toEntity())
         return ResponseEntity.status(HttpStatus.CREATED).body("Credit ${credit.creditCode} - Customer ${credit.customer?.firstName} saved!")
     }

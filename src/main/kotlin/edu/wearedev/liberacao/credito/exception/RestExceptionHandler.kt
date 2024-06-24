@@ -24,7 +24,7 @@ class RestExceptionHandler {
         }
         return ResponseEntity(
             ExceptionDetails(
-                title = "Bad Request: Consult the documentation",
+                title = "Bad Request! Consult the documentation",
                 timestamp = LocalDateTime.now(),
                 status = HttpStatus.BAD_REQUEST.value(),
                 exception = ex.javaClass.toString(),
@@ -39,7 +39,7 @@ class RestExceptionHandler {
         val erros: MutableMap<String, String?> = HashMap()
         return ResponseEntity(
             ExceptionDetails(
-                title = "Bad Request: Consult the documentation",
+                title = "Conflict! Consult the documentation",
                 timestamp = LocalDateTime.now(),
                 status = HttpStatus.CONFLICT.value(),
                 exception = ex.javaClass.toString(),
@@ -54,7 +54,7 @@ class RestExceptionHandler {
         val erros: MutableMap<String, String?> = HashMap()
         return ResponseEntity(
             ExceptionDetails(
-                title = "Bad Request: Consult the documentation",
+                title = "Bad Request! Consult the documentation",
                 timestamp = LocalDateTime.now(),
                 status = HttpStatus.BAD_REQUEST.value(),
                 exception = ex.javaClass.toString(),
@@ -69,7 +69,7 @@ class RestExceptionHandler {
         val erros: MutableMap<String, String?> = HashMap()
         return ResponseEntity(
             ExceptionDetails(
-                title = "Bad Request: Consult the documentation",
+                title = "Bad Request! Consult the documentation",
                 timestamp = LocalDateTime.now(),
                 status = HttpStatus.BAD_REQUEST.value(),
                 exception = ex.javaClass.toString(),

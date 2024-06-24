@@ -12,9 +12,8 @@ class CustomerService(
     ): ICustomerService {
 
 
-    override fun save(customer: Customer): Customer {
-        return this.customerRepository.save(customer)
-    }
+    override fun save(customer: Customer): Customer = this.customerRepository.save(customer)
+
 
 
     override fun findById(id: Long): Customer = this.customerRepository.findById(id)
@@ -22,7 +21,8 @@ class CustomerService(
 
 
     override fun delete(id: Long) {
-        this.customerRepository.deleteById(id)
+        val customer: Customer = this.findById(id)
+        this.customerRepository.delete(customer)
     }
 
 }
